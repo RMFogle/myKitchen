@@ -40,16 +40,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(authCheck);
 
-
-require('./routes')(app);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
