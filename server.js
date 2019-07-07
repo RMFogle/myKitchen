@@ -5,6 +5,8 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
