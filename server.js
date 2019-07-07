@@ -1,33 +1,54 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
-// Requiring passport as we've configured it
-var passport = require("./config/passport");
+// Dependencies
+// ============
+var express        = require('express');
+var path           = require('path');
+var session        = require('express-session'); 
+var passport 			 = require("./config/passport");
+var config				 = require("./config/extra-config");
+// Express settings
+// ================
 
-// Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 3000;
+
+// instantiate our app
+var app            = express();
+var PORT           = process.env.PORT || 3000;
 
 // Requiring our models for syncing
 var db = require("./models");
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+
+//set up handlebars
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+
+var isAuth 				 = require("./config/middleware/isAuthenticated");
+var authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
+
+
+
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Static directory
-app.use(express.static("public"));
+app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(authCheck);
 
-// Routes
-// =============================================================
-require("./routes/html-routes.js")(app);
-require("./routes/author-api-routes.js")(app);
-require("./routes/post-api-routes.js")(app);
+
+require('./routes')(app);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -36,3 +57,4 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
