@@ -12,7 +12,15 @@ $(document).ready(function() {
         password: passwordInput.val().trim()
       };
   
-      if (!userData.username || !userData.password) {
+      if (!userData.username) {
+        usernameInput.css("border", "solid 1px red");
+        $("#username-feedback").text("Please enter a username");
+        return;
+      }
+  
+      if (!userData.password) {
+        passwordInput.css("border", "solid 1px red");
+        $("#password-feedback").text("Please enter a password");
         return;
       }
   
@@ -24,13 +32,14 @@ $(document).ready(function() {
   
     // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
     function loginUser(username, password) {
-      $.post("/api/login", {
+      $.post("/users/login", {
         username: username,
         password: password
       }).then(function(data) {
         window.location.replace(data);
         // If there's an error, log the error
       }).catch(function(err) {
+        $("#password-feedback").text("Incorrect Username or Password");
         console.log(err);
       });
     }
