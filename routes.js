@@ -8,16 +8,18 @@ module.exports = function(app){
     var kitchBdrygood = require('./routes/kitchBdrygood');
     var kitchBwalkFreeze = require('./routes/kitchBwalkFreeze');
     var kitchBwalkFridge = require('./routes/kitchBwalkFridge');
+    var kitchens = require('./routes/kitchens')
     
 
-    app.use('/', application);
-    app.use('/users', users);
-    app.use('/kitchAdrygood', kitchAdrygood);
-    app.use('/kitchAwalkFreeze', kitchAwalkFreeze);
-    app.use('/kitchAwalkFridge', kitchAwalkFridge);
-    app.use('/kitchBdrygood', kitchBdrygood);
-    app.use('/kitchBwalkFreeze', kitchBwalkFreeze);
-    app.use('/kitchBwalkFridge', kitchBwalkFridge);
+    //app.use('/', application);
+    //app.use('/users', users);
+    //app.use('/kitchAdrygood', kitchAdrygood);
+    //app.use('/kitchAwalkFreeze', kitchAwalkFreeze);
+    //app.use('/kitchAwalkFridge', kitchAwalkFridge);
+    //app.use('/kitchBdrygood', kitchBdrygood);
+    //app.use('/kitchBwalkFreeze', kitchBwalkFreeze);
+    //app.use('/kitchBwalkFridge', kitchBwalkFridge);
+    app.use('/kitchens', kitchens);
     
 }
 
