@@ -1,6 +1,7 @@
 var db = require('../models');
 
 //this is the users_controller.js file
+//Note:  I'm thinking we won't need this because we don't have registration page.  
 exports.registrationPage = function(req,res) {
   res.render('users/registration', {
     layout: 'main-registration'

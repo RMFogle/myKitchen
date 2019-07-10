@@ -202,6 +202,11 @@ ul, li {
 /*===new form begins here===*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.title {
+  width: 8% 0 0;
+  margin: auto;
+}
+
 .login-page {
   width: 8% 0 0;
   margin: auto;
