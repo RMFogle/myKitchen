@@ -8,7 +8,7 @@ exports.index = function(req, res) {
   }).then(function(dbKitchAdryGoods) {
     console.log(dbKitchAdryGoods);
     res.render('kitchAdryGoods/kitchAdryGoods', {
-      layout: 'main- ',
+      layout: 'main-Kitchen',
       kitchAdryGoods: dbKitchAdryGoods
     });
   });

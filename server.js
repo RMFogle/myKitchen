@@ -27,7 +27,7 @@ app.set('view engine', 'handlebars');
 var isAuth 				 = require("./config/middleware/isAuthenticated");
 var authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
 
-
+require('./routes')(app);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
