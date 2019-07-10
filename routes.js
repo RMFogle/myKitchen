@@ -2,12 +2,12 @@ module.exports = function(app){
 
     var application = require('./routes/application');
     var users = require('./routes/users');
-    var kitchAdrygood = require('./routes/kitchAdrygood ');
-    var kitchAwalkFreeze = require('./routes/kitchAwalkFreeze ');
-    var kitchAwalkFridge = require('./routes/kitchAwalkFridge ');
-    var kitchBdrygood = require('./routes/kitchBdrygood ');
-    var kitchBwalkFreeze = require('./routes/kitchBwalkFreeze ');
-    var kitchBwalkFridge = require('./routes/kitchBwalkFridge ');
+    var kitchAdrygood = require('./routes/kitchAdrygood');
+    var kitchAwalkFreeze = require('./routes/kitchAwalkFreeze');
+    var kitchAwalkFridge = require('./routes/kitchAwalkFridge');
+    var kitchBdrygood = require('./routes/kitchBdrygood');
+    var kitchBwalkFreeze = require('./routes/kitchBwalkFreeze');
+    var kitchBwalkFridge = require('./routes/kitchBwalkFridge');
     
 
     app.use('/', application);

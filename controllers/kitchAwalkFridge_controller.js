@@ -7,8 +7,8 @@ exports.index = function(req, res) {
     }
   }).then(function(dbKitchAwalkFridge) {
     console.log(dbKitchAwalkFridge);
-    res.render('kitchAwalkFridge/kitchAwalkFridge', {
-      layout: 'main- ',
+    res.render('kitchen/tableA', {
+      layout: 'main-Kitchen',
       kitchAwalkFridge: dbKitchAwalkFridge
     });
   });

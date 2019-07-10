@@ -1,11 +1,11 @@
 var express = require('express');
 var router  = express.Router();
 
-var kitchAdrygood_controller = require('../controllers/kitchAdrygood_controller');
+var kitchAdryGood_controller = require('../controllers/kitchAdryGood_controller');
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
-router.get('/', isAuthenticated, kitchAdrygood_controller.index);
+router.get('/', isAuthenticated, kitchAdryGood_controller.index);
 
-router.post('/new', isAuthenticated, kitchAdrygood_controller.createKitchAdryGoods);
+router.post('/new', isAuthenticated, kitchAdryGood_controller.createKitchAdryGoods);
 
 module.exports = router;
