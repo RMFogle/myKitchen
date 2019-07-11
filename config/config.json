@@ -1,10 +1,13 @@
 {
   "development": {
     "username": "root",
-    "password": "calvinKool2020$",
+    "password": "Apple101",
     "database": "myKitchen_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "define": {
+      "timestamps": true
+    },
     "operatorsAliases": false
   },
   "test": {
