@@ -8,29 +8,21 @@
           <div class="form">
 
 
-            <form class="register-form" method="post">
+            <form class="register-form" action="/users/signup" method="post">
 
-              <input type="text" name="username" class="form-control" id="registerusername-input" value="" placeholder="Username" />
-
-              <input type="email" name="email" class="form-control" id="registeremail-input" value="" placeholder="Email Address" />
-                  
-              <input type="password" name="password" class="form-control" id="password-input" value="" placeholder="Password" />
-              
-              <button type="submit">create</button>
-
-              <p class="message">Already registered? <a>Sign In</a></p>
+                <input type="text" name="username" class="form-control" id="registerusername-input" value="" placeholder="Username" />
+                <input type="email" name="email" class="form-control" id="registeremail-input" value="" placeholder="Email Address" />
+                 <input type="password" name="password" class="form-control" id="password-input" value="" placeholder="Password" />
+                <button type="submit">create</button>
+                <p class="message">Already registered? <a>Sign In</a></p>
 
             </form>
-
 
             <form class="login-form">
 
               <input type="text" class="form-control" id="loginusername-input" placeholder="Username" />
-
               <input type="password" class="form-control" id="loginpassword-input" placeholder="Password" />
-
               <a href="./kitchens"><button type="login">login</button></a>
-
               <p class="message">Not registered? <a>Create an account</a></p>
 
             </form>
