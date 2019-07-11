@@ -4,7 +4,7 @@ module.exports = function(app){
     var kitchens = require('./routes/kitchens');
     var kitchenA = require('./routes/kitchenA');
     var kitchenB = require('./routes/kitchenB');
-    //var users = require('./routes/users');
+    var users = require('./routes/users');
     //var kitchAdrygood = require('./routes/kitchAdrygood');
     //var kitchAwalkFreeze = require('./routes/kitchAwalkFreeze');
     //var kitchAwalkFridge = require('./routes/kitchAwalkFridge');
@@ -17,7 +17,7 @@ module.exports = function(app){
     app.use('/kitchens', kitchens);
     app.use('/kitchenA', kitchenA);
     app.use('/kitchenB', kitchenB);
-    //app.use('/users', users);
+    app.use('/users', users);
     //app.use('/kitchAdrygood', kitchAdrygood);
     //app.use('/kitchAwalkFreeze', kitchAwalkFreeze);
     //app.use('/kitchAwalkFridge', kitchAwalkFridge);

@@ -1,8 +1,8 @@
 $(document).ready(function() {
     // Getting references to our form and inputs
-    var loginUser = $("form.login-form");
-    var usernameInput = $("input#username-input");
-    var passwordInput = $("input#password-input");
+    var loginForm = $("form.login-form");
+    var usernameInput = $("input#loginusername-input");
+    var passwordInput = $("input#loginpassword-input");
   
     // When the form is submitted, we validate there's an username and password entered
     loginForm.on("submit", function(event) {
@@ -11,15 +11,17 @@ $(document).ready(function() {
         username: usernameInput.val().trim(),
         password: passwordInput.val().trim()
       };
+
+      console.log(userData);
   
       if (!userData.username) {
-        usernameInput.css("border", "solid 1px red");
+        // usernameInput.css("border", "solid 1px red");
         $("#username-feedback").text("Please enter a username");
         return;
       }
   
       if (!userData.password) {
-        passwordInput.css("border", "solid 1px red");
+        // passwordInput.css("border", "solid 1px red");
         $("#password-feedback").text("Please enter a password");
         return;
       }
