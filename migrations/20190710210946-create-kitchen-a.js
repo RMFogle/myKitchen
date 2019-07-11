@@ -35,6 +35,12 @@ module.exports = {
       setMin: {
         type: Sequelize.INTEGER
       },
+      createdAt: {
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        type: Sequelize.DATE
+      }
     });
   },
   down: (queryInterface, Sequelize) => {
