@@ -8,17 +8,17 @@
           <div class="form">
 
 
-            <form class="register-form">
+            <form class="register-form" action="/users/signup" method="post">
 
-              <input type="" name="" class="form-control" id="registerusername-input" value="" placeholder="Username" />
+              <input type="text" name="username" class="form-control" id="registerusername-input" value="" placeholder="Username" />
 
-              <input type="email" name="" class="form-control" id="registeremail-input" value="" placeholder="Email Address" />
+              <input type="email" name="email" class="form-control" id="registeremail-input" value="" placeholder="Email Address" />
                   
-              <input type="password" name="" class="form-control" id="password-input" value="" placeholder="Password" />
+              <input type="password" name="password" class="form-control" id="password-input" value="" placeholder="Password" />
               
               <button type="submit">create</button>
 
-              <p class="message">Already registered? <a href="#">Sign In</a></p>
+              <p class="message">Already registered? <a>Sign In</a></p>
 
             </form>
 
@@ -31,7 +31,7 @@
 
               <a href="./kitchens"><button type="login">login</button></a>
 
-              <p class="message">Not registered? <a href="#">Create an account</a></p>
+              <p class="message">Not registered? <a>Create an account</a></p>
 
             </form>
 
