@@ -5,7 +5,6 @@ module.exports = function(app){
     var kitchenA = require('./routes/kitchenA');
     var kitchenB = require('./routes/kitchenB');
     var users = require('./routes/users');
-    var kitchAdrygood = require('./routes/kitchAdrygood');
 
     
 
@@ -14,7 +13,6 @@ module.exports = function(app){
     app.use('/kitchenA', kitchenA);
     app.use('/kitchenB', kitchenB);
     app.use('/users', users);
-    app.use('/kitchAdrygood', kitchAdrygood);
     
 }
 
