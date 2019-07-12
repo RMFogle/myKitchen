@@ -1,16 +1,21 @@
 var db  = require('../models');
 
 exports.index = function(req, res) {
-  db.KitchAdryGoods.findAll({
-    where: {
-      UserId: req.user.id
-    }
+  //db.KitchAdryGoods.findAll({
+    db.kitchenA.findAll({
+    //where: {
+      //UserId: req.user.id
+    //}
   }).then(function(dbKitchAdryGoods) {
     console.log(dbKitchAdryGoods);
-    res.render('kitchAdryGoods/kitchAdryGoods', {
-      layout: 'main-Kitchen',
-      kitchAdryGoods: dbKitchAdryGoods
+    res.send(rows);
+    res.render("kitchen/tableA",{
+layout: 'main-Kitchen',
     });
+    //res.render('kitchAdryGoods/kitchAdryGoods', {
+      //layout: 'main-Kitchen',
+     // kitchAdryGoods: dbKitchAdryGoods
+    //});
   });
 };
 
