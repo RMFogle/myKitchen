@@ -18,10 +18,14 @@ module.exports = {
         type: Sequelize.STRING
       },
       createdAt: {
-        type: Sequelize.DATE
+        allowNull: false,
+        type: Sequelize.DATE, 
+        defaultValue: new Date()
       },
       updatedAt: {
-        type: Sequelize.DATE
+        allowNull: false,
+        type: Sequelize.DATE, 
+        defaultValue: new Date()
       }
     });
   },
