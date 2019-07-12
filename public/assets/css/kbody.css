@@ -22,3 +22,20 @@
 font-family: Poppins-Regular;
 color: #333333
 }
+
+#kchoice {
+    margin-top: 130px
+}
+
+.list-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  background-color: white;
+}
+
+li {
+  float: left;
+  padding: 10px; 
+}

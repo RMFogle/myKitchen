@@ -1,21 +1,23 @@
 $(document).ready(function() {
     // Getting references to our form and input Unsure about first one.  
-    var signUpButton = $(".signup");
-    var usernameInput = $("input#username-input");
-    var emailInput = $("input#email-input");
+    var signUpButton = $("form.register-form");
+    var usernameInput = $("input#registerusername-input");
+    var emailInput = $("input#registeremail-input");
     var passwordInput = $("input#password-input");
   
     // When the signup button is clicked, we validate the username, email and password are not blank
-    signUpButton.on("click", function(event) {
-      event.preventDefault();
+    signUpButton.on("submit", function(event) {
+      // event.preventDefault();
+
       var userData = {
         username: usernameInput.val().trim(),
         email: emailInput.val().trim(),
         password: passwordInput.val().trim()
       };
+      console.log(userData);
   
       if (!userData.username ||!userData.email || !userData.password) {
-        return;
+        // return alert("Please don't leave fields blank");
       }
 
       // If we have a username, email and password, run the signUpUser function
@@ -36,7 +38,7 @@ $(document).ready(function() {
         if(data.duplicateUser) {
           alert("Sorry, that username has been taken")
         } else {
-          window.location = data.redirect; 
+          // window.location = data.redirect; 
         }
       }).catch(function(err) {
         console.log(err);
