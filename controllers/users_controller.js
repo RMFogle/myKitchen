@@ -4,7 +4,7 @@ var db = require('../models');
 //Note:  I'm thinking we won't need this because we don't have registration page.  
 exports.registrationPage = function(req,res) {
   res.render('index', {
-   // layout: 'main-registration'
+    // layout: 'main-registration'
   });
 };
 
@@ -24,7 +24,7 @@ exports.loginUser = function(req, res) {
 // register a user
 exports.signUpUser = function(req,res) {
 
-  db.User.findAll({
+  db.Users.findAll({
     where: {username: req.body.username}
   }).then(function(users) {
     if (users.length > 0) {
@@ -33,7 +33,7 @@ exports.signUpUser = function(req,res) {
       });
     //At some point, make sure that only one user can be associated with an email.
     } else {
-      db.User.create({
+      db.Users.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
