@@ -23,9 +23,9 @@ exports.loginUser = function(req, res) {
 
 // register a user
 exports.signUpUser = function(req,res) {
-
+console.log("Info " + req.params.username);
   db.User.findAll({
-    where: {username: req.body.username}
+    where: {username: req.params.username}
   }).then(function(users) {
     if (users.length > 0) {
       res.json({
@@ -34,9 +34,9 @@ exports.signUpUser = function(req,res) {
     //At some point, make sure that only one user can be associated with an email.
     } else {
       db.User.create({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
+        username: req.params.username,
+        email: req.params.email,
+        password: req.params.password
       }).then(function() {
         res.send({redirect: '/'});
       }).catch(function(err) {
